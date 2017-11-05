@@ -19,7 +19,6 @@ public class Player {
 	
 	public int tossDie(Die die) {
 		int face1 = die.getFace();
-		int face2 = die.getFace();
 		
 		Util.print(this, getName() + " toss a die... Face is " + face1);
 		return face1;
