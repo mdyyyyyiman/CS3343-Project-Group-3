@@ -1,0 +1,41 @@
+0 Go 200
+1 Place Brown TinShuiWai 60
+2 CommunityService 
+3 Place Brown CheungChau 60
+4 Tax 200
+5 Place White TongChung 200
+6 Place Azure ApLeiChau 100
+7 Chance 
+8 Place Azure KwunTong 100
+9 Place Azure LamTin 120
+10 Jail
+11 Place Pink TuenMun 140
+12 Place White HKElectric 150
+13 Place Pink YuenLong 140
+14 Place Pink TaiPo 160
+15 Place White TsingYiStation 200
+16 Place Orange TaiWai 180
+17 CommunityService
+18 Place Orange Shatin 180
+19 Place Orange MaOnShan 200
+20 Parking
+21 Place Red TseungKwanO 220
+22 Chance
+23 Place Red TsuenWan 220
+24 Place Red Aberdeen 240
+25 Place White KowloonTong 200
+26 Place Yellow MongKok 260
+27 Place Yellow TsimShaTsui 260
+28 Place White WaterSupplyDept 150
+29 Place Yellow KowloonWest 280
+30 GoToJail
+31 Place Green CausewayBay 300
+32 Place Green WanChai 300
+33 CommunityService
+34 Place Green Central 320
+35 Place White HongKongStation 200
+36 Chance
+37 Place Blue PokFuLam 350
+38 Tax 100
+39 Place Blue VictoriaPeak 400 
+
