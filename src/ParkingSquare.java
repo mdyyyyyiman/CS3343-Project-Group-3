@@ -6,7 +6,7 @@ public class ParkingSquare extends Square {
 	
 	@Override
 	public void doAction(Player player, Board board) {
-		
+		System.out.println("Nothing Happen.");
 	}
 
 	@Override

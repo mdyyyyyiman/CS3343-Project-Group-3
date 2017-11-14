@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Player {
 	int totalWalk = 0;
 	int position = 0;
@@ -5,8 +7,18 @@ public class Player {
 	String name;
 	Token token;
 	boolean brokeout = false;
-	Money money = new Money(5000);
+	Money money = new Money(1500);
+	boolean jailPass = false;
+	ArrayList<PlaceSquare> ownedLand = new ArrayList<PlaceSquare>();
 	
+	public boolean hasJailPass() {
+		return jailPass;
+	}
+
+	public void setJailPass(boolean jailPass) {
+		this.jailPass = jailPass;
+	}
+
 	public Player(int id, String name, Token token) {
 		this.id = id;
 		this.name = name;
@@ -20,7 +32,7 @@ public class Player {
 	public int tossDie(Die die) {
 		int face1 = die.getFace();
 		
-		Util.print(this, getName() + " toss a die... Face is " + face1);
+		System.out.println(getName() + " toss a die... Face is " + face1);
 		return face1;
 	}
 	
@@ -59,5 +71,12 @@ public class Player {
 	public Token getToken() {
 		
 		return token;
+	}
+	public void buyLand(PlaceSquare place) {
+		ownedLand.add(place);
+	}
+
+	public ArrayList<PlaceSquare> getOwnedLand() {
+		return ownedLand;
 	}
 }

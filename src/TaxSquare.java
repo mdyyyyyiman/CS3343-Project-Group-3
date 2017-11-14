@@ -7,7 +7,8 @@ public class TaxSquare extends Square {
 	
 	@Override
 	public void doAction(Player player, Board board) {
-		
+		System.out.println(player.getName() + " need to pay $" + price + " tax." );
+		player.getMoney().substractMoney(price);
 	}
 
 	@Override

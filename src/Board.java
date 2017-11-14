@@ -56,7 +56,7 @@ public class Board {
 		if(player.isBrokeOut()){ return squares[player.getCurrentPosition()]; }
 		int newPosition = normalizePosition(player.getCurrentPosition() + face);
 		player.setPosition(newPosition);
-		Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+		System.out.println(player.getName() + " goes to " + squares[player.getCurrentPosition()].getDetails());
 		squares[newPosition].doAction(player, this);
 		if(player.getMoney().isBrokeOut()){
 			Util.print(player, player.getName() + " has been broke out!");
@@ -127,8 +127,17 @@ public class Board {
 			System.out.println("The " + i + " square is a " + squares[i].getDetails());
 	}
 	public void outputPlayer() {
-		for(Player p : players)
-			System.out.println("Player " + p.getID() + " " + p.getName()+" "+p.getToken());
+		for(Player p : players) {
+			System.out.println("Player " + p.getID() + " " + p.getName()+" $"+p.getMoney().getMoney());
+			System.out.println("Owned Land:");
+			for(PlaceSquare s : p.getOwnedLand()) {
+				System.out.println(s.getDetails());
+				
+				
+			}
+		}
 	}
+	
+	
 }
 

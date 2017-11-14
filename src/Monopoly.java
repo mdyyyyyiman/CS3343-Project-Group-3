@@ -24,7 +24,7 @@ public class Monopoly {
 				players = new Player[totalPlayer];
 				while (i != totalPlayer) {
 
-					System.out.println("\nWhat is Player " + (i + 1) + " name and chess? (Enter the number) ");
+					System.out.println("\nWhat is Player " + (i + 1) + " name and token? (Enter the number) ");
 					for(Token token : Token.values()) {
 						System.out.print( "(" +token.getTokenId()+")"+token+" ");
 					}
@@ -36,7 +36,7 @@ public class Monopoly {
 						System.out.println("The Chess number is not correct plz re-enter the info.");
 						continue;
 					}
-					players[i] = new Player(i + 1, name, Token.values()[tokenId]);
+					players[i] = new Player(i, name, Token.values()[tokenId]);
 					i++;
 
 				}
@@ -48,9 +48,10 @@ public class Monopoly {
 				System.err.println("Error: Invalid player count.");
 			}
 		}
-		scanner.close();
+		
 		Monopoly game = new Monopoly(players);
-		// game.startGame();
+		game.startGame();
+		scanner.close();
 	}
 
 	public void startGame() {
@@ -58,10 +59,13 @@ public class Monopoly {
 		System.out.println("========");
 		while (!isGameEnd() && !board.hasWinner()) {
 			if (!board.getCurrentPlayer().isBrokeOut()) {
+				Util.print(board.getCurrentPlayer(),"");
+				EventHandler.askingForEvent(board);
 				int face = board.getCurrentPlayer().tossDie(die);
 				board.movePlayer(board.getCurrentPlayer(), face);
 			}
 			board.nextTurn();
+			System.out.println("========");
 		}
 		System.out.println("========");
 		if (board.hasWinner()) {

@@ -5,8 +5,19 @@ public class JailSquare extends Square {
 	
 	@Override
 	public void doAction(Player player, Board board) {
-		Util.print(player, player.getName() + " has been Jail and lost 500 money");
-		player.getMoney().substractMoney(500);
+		if(player.hasJailPass()) {
+			System.out.println("Do you want to use Jail Pass ?");
+			String cmd = cmdHandler.getYesNoCmd();
+			if(cmd.equals("Y")){
+				System.out.println("You have use the jail pass");
+				player.setJailPass(false);
+			}else if(cmd.equals("N")){
+				System.out.println(player.getName() + " has been Jail and lost 500 money");
+				player.getMoney().substractMoney(500);
+				
+			}
+		}
+		
 	}
 
 	@Override
