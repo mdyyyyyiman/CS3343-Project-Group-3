@@ -1,8 +1,8 @@
 import java.util.Random;
 
-public class ChanceSquare extends Square {
+public class Square_Chance extends Square {
 
-	public ChanceSquare(String name) {
+	public Square_Chance(String name) {
 		super(name);
 	}
 	

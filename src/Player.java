@@ -9,7 +9,8 @@ public class Player {
 	boolean brokeout = false;
 	Money money = new Money(1500);
 	boolean jailPass = false;
-	ArrayList<PlaceSquare> ownedLand = new ArrayList<PlaceSquare>();
+	boolean inJail = false;
+	ArrayList<Square_Place> ownedLand = new ArrayList<Square_Place>();
 	
 	public boolean hasJailPass() {
 		return jailPass;
@@ -31,7 +32,6 @@ public class Player {
 	
 	public int tossDie(Die die) {
 		int face1 = die.getFace();
-		
 		System.out.println(getName() + " toss a die... Face is " + face1);
 		return face1;
 	}
@@ -69,14 +69,20 @@ public class Player {
 	}
 
 	public Token getToken() {
-		
 		return token;
 	}
-	public void buyLand(PlaceSquare place) {
+	public void buyLand(Square_Place place) {
 		ownedLand.add(place);
 	}
 
-	public ArrayList<PlaceSquare> getOwnedLand() {
+	public ArrayList<Square_Place> getOwnedLand() {
 		return ownedLand;
 	}
+	public void goJail(boolean b) {
+		inJail =b;
+	}
+	public boolean isInJail() {
+		return inJail;
+	}
+	
 }

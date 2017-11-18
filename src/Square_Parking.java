@@ -1,6 +1,6 @@
-public class ParkingSquare extends Square {
+public class Square_Parking extends Square {
 
-	public ParkingSquare(String name) {
+	public Square_Parking(String name) {
 		super(name);
 	}
 	

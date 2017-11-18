@@ -1,8 +1,8 @@
 import java.util.Random;
 
-public class CommunityServiceSquare extends Square {
+public class Square_CommunityService extends Square {
 	
-	public CommunityServiceSquare(String name) {
+	public Square_CommunityService(String name) {
 		super(name);
 	}
 	

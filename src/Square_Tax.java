@@ -1,6 +1,6 @@
-public class TaxSquare extends Square {
+public class Square_Tax extends Square {
 	private int price;
-	public TaxSquare(String name, String price) {
+	public Square_Tax(String name, String price) {
 		super(name);
 		this.price = Integer.parseInt(price);
 	}

@@ -1,12 +1,12 @@
 
-public class PlaceSquare extends Square {
+public class Square_Place extends Square {
 	private int price;
 	private int owner = -1;
 	private String colour;
 	private Boolean house = false;
 	private Boolean hotel = false;
 	
-	public PlaceSquare(String colour, String name, String price) {
+	public Square_Place(String colour, String name, String price) {
 		super(name);
 		this.price = Integer.parseInt(price);
 		this.colour = colour;
@@ -23,7 +23,7 @@ public class PlaceSquare extends Square {
 	@Override
 	public void doAction(Player player, Board board) {
 		if(owner < 0){
-			System.out.println(player.getName() + ", do you want to buy " + getDetails() + "? (Y/N)");
+			System.out.println(player.getName() + ", do you want to it? (Y/N)");
 			String cmd =cmdHandler.getYesNoCmd();
 			if(cmd.equals("Y")){
 				System.out.println(player.getName() + " buy " + getName() + " for " + price);

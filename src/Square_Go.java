@@ -1,6 +1,6 @@
-public class GoSquare extends Square {
+public class Square_Go extends Square {
 	private int bonus;
-	public GoSquare(String name, String bonus) {
+	public Square_Go(String name, String bonus) {
 		super(name);
 		this.bonus = Integer.parseInt(bonus);
 	}

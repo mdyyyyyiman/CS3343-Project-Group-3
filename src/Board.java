@@ -9,7 +9,6 @@ public class Board {
 	int totalPlayer = 0;
 	Player[] players;
 	Square[] squares = new Square[40];
-	String[] names = new String[] { "House", "Villa", "Town", "City", "Peace", "Village", "Jade", "Soi 4", "White", "Dark" };
 	
 	public Board(Player[] players) {
 		this.players = players;
@@ -23,21 +22,21 @@ public class Board {
 						continue;
 				 String[] cmdParts = cmdLine.split(" ");
 				 if (cmdParts[1].equals("Go")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new GoSquare(cmdParts[1],cmdParts[2]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_Go(cmdParts[1],cmdParts[2]);
 				 else if(cmdParts[1].equals("Place")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new PlaceSquare(cmdParts[2],cmdParts[3],cmdParts[4]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_Place(cmdParts[2],cmdParts[3],cmdParts[4]);
 				 else if(cmdParts[1].equals("CommunityService")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new CommunityServiceSquare(cmdParts[1]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_CommunityService(cmdParts[1]);
 				 else if(cmdParts[1].equals("Tax")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new TaxSquare(cmdParts[1],cmdParts[2]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_Tax(cmdParts[1],cmdParts[2]);
 				 else if(cmdParts[1].equals("Chance")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new ChanceSquare(cmdParts[1]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_Chance(cmdParts[1]);
 				 else if(cmdParts[1].equals("Jail")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new JailSquare(cmdParts[1]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_Jail(cmdParts[1]);
 				 else if(cmdParts[1].equals("GoToJail")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new GoToJailSquare(cmdParts[1]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_GoToJail(cmdParts[1]);
 				 else if(cmdParts[1].equals("Parking")) 
-					 squares[Integer.parseInt(cmdParts[0])] = new ParkingSquare(cmdParts[1]);
+					 squares[Integer.parseInt(cmdParts[0])] = new Square_Parking(cmdParts[1]);
 
 		        }
 			 scanner.close();
@@ -53,10 +52,11 @@ public class Board {
 	}
 	
 	public Square movePlayer(Player player, int face, boolean count) {
+		System.out.println("Player walk "+ face +" steps");
 		if(player.isBrokeOut()){ return squares[player.getCurrentPosition()]; }
 		int newPosition = normalizePosition(player.getCurrentPosition() + face);
 		player.setPosition(newPosition);
-		System.out.println(player.getName() + " goes to " + squares[player.getCurrentPosition()].getDetails());
+		System.out.println(player.getName() + " goes to [square "+player.getCurrentPosition()+"] " + squares[player.getCurrentPosition()].getDetails());
 		squares[newPosition].doAction(player, this);
 		if(player.getMoney().isBrokeOut()){
 			Util.print(player, player.getName() + " has been broke out!");
@@ -122,6 +122,15 @@ public class Board {
 	public int getTotalSquare() {
 		return squares.length;
 	}
+	
+	public int getJailSquare() {
+		for(int i =0; i< squares.length;i++){
+			if(squares[i].getName().equalsIgnoreCase("Jail")) 
+				return i;
+		}
+		return -1;
+		
+	}
 	public void outputBoard() {	
 		for(int i =0; i < squares.length;i++) 
 			System.out.println("The " + i + " square is a " + squares[i].getDetails());
@@ -130,7 +139,7 @@ public class Board {
 		for(Player p : players) {
 			System.out.println("Player " + p.getID() + " " + p.getName()+" $"+p.getMoney().getMoney());
 			System.out.println("Owned Land:");
-			for(PlaceSquare s : p.getOwnedLand()) {
+			for(Square_Place s : p.getOwnedLand()) {
 				System.out.println(s.getDetails());
 				
 				

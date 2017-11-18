@@ -1,5 +1,5 @@
-public class JailSquare extends Square {
-	public JailSquare(String name) {
+public class Square_Jail extends Square {
+	public Square_Jail(String name) {
 		super(name);
 	}
 	
@@ -12,7 +12,7 @@ public class JailSquare extends Square {
 				System.out.println("You have use the jail pass");
 				player.setJailPass(false);
 			}else if(cmd.equals("N")){
-				System.out.println(player.getName() + " has been Jail and lost 500 money");
+				System.out.println(player.getName() + " has been Jailed and lost $500");
 				player.getMoney().substractMoney(500);
 				
 			}

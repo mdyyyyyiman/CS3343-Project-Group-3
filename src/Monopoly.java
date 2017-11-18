@@ -59,10 +59,17 @@ public class Monopoly {
 		System.out.println("========");
 		while (!isGameEnd() && !board.hasWinner()) {
 			if (!board.getCurrentPlayer().isBrokeOut()) {
-				Util.print(board.getCurrentPlayer(),"");
-				EventHandler.askingForEvent(board);
-				int face = board.getCurrentPlayer().tossDie(die);
-				board.movePlayer(board.getCurrentPlayer(), face);
+				Util.print(board.getCurrentPlayer(),"");				
+				int face1 = board.getCurrentPlayer().tossDie(die);
+				int face2 = board.getCurrentPlayer().tossDie(die);
+				if(board.getCurrentPlayer().isInJail()) {
+					if(face1 ==face2) {
+						System.out.println("Player is in Jail, and get the same faces.");
+						board.movePlayer(board.getCurrentPlayer(), face1+face2);
+					}else
+						System.out.println("Player is in Jail, and dont get the same faces. Can't move.");
+				}
+				board.movePlayer(board.getCurrentPlayer(), face1+face2);
 			}
 			board.nextTurn();
 			System.out.println("========");
