@@ -7,7 +7,7 @@ public class Square_Jail extends Square {
 	public void doAction(Player player, Board board) {
 		if(player.hasJailPass()) {
 			System.out.println("Do you want to use Jail Pass ?");
-			String cmd = cmdHandler.getYesNoCmd();
+			String cmd = GameMaster.getYesNoCmd();
 			if(cmd.equals("Y")){
 				System.out.println("You have use the jail pass");
 				player.setJailPass(false);

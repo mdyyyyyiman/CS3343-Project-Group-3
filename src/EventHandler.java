@@ -2,12 +2,12 @@
 public class EventHandler {
 	public static void askingForEvent(Board board) {
 		System.out.println("Do any player want to trade or do other things? (type help for list of command, end to exit)");
-		String cmd = cmdHandler.getYesNoCmd();
+		String cmd = GameMaster.getYesNoCmd();
 		if(cmd.equals("N")) 
 			return;
 		if(cmd.equals("Y")) {
 			System.out.print("Enter Command:");
-			String[] eventCmd = cmdHandler.getPlayerCmd();
+			String[] eventCmd = GameMaster.getPlayerCmd();
 			while(!eventCmd[0].equals("end")) {
 				if(eventCmd[0].equals("help")) {
 					EventHandler.help();
@@ -17,7 +17,7 @@ public class EventHandler {
 				}else if(eventCmd[0].equals("trade")) {
 					EventHandler.trade(board);
 				}
-				eventCmd = cmdHandler.getPlayerCmd();
+				eventCmd = GameMaster.getPlayerCmd();
 			}
 		}
 			

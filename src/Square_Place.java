@@ -24,7 +24,7 @@ public class Square_Place extends Square {
 	public void doAction(Player player, Board board) {
 		if(owner < 0){
 			System.out.println(player.getName() + ", do you want to it? (Y/N)");
-			String cmd =cmdHandler.getYesNoCmd();
+			String cmd =GameMaster.getYesNoCmd();
 			if(cmd.equals("Y")){
 				System.out.println(player.getName() + " buy " + getName() + " for " + price);
 				owner = player.getID();
@@ -49,7 +49,7 @@ public class Square_Place extends Square {
 			}else {
 				if(!hotel && house) {
 					System.out.println("Do you want to build a hotel ($100)? (Y/N)");
-					String cmd = cmdHandler.getYesNoCmd();
+					String cmd = GameMaster.getYesNoCmd();
 					if(cmd.equals("Y")){
 						System.out.println(player.getName() + " build a hotel on " + getName());
 						house = true;
@@ -60,7 +60,7 @@ public class Square_Place extends Square {
 					
 				}else if(!house) {
 					System.out.println("Do you want to build a house ($50)? (Y/N)");
-					String cmd = cmdHandler.getYesNoCmd();
+					String cmd = GameMaster.getYesNoCmd();
 					if(cmd.equals("Y")){
 						System.out.println(player.getName() + " build a house on " + getName());
 						house = true;
