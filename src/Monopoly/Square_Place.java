@@ -1,3 +1,4 @@
+package Monopoly;
 
 public class Square_Place extends Square {
 	private int price;

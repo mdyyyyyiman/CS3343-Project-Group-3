@@ -1,3 +1,4 @@
+package Monopoly;
 public class Square_Parking extends Square {
 
 	public Square_Parking(String name) {

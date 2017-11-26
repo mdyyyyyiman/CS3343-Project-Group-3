@@ -1,3 +1,4 @@
+package Monopoly;
 
 public enum Token {
 	boot(0),

@@ -1,3 +1,4 @@
+package Monopoly;
 
 public class EventHandler {
 	public static void askingForEvent(Board board) {

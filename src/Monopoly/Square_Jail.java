@@ -1,3 +1,4 @@
+package Monopoly;
 public class Square_Jail extends Square {
 	public Square_Jail(String name) {
 		super(name);

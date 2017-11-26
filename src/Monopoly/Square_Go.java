@@ -1,3 +1,4 @@
+package Monopoly;
 public class Square_Go extends Square {
 	private int bonus;
 	public Square_Go(String name, String bonus) {

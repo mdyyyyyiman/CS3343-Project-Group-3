@@ -1,3 +1,4 @@
+package Monopoly;
 import java.util.Random;
 
 public class VacationSquare extends Square {

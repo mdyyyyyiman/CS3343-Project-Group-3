@@ -1,3 +1,4 @@
+package Monopoly;
 
 public class Monopoly {
 	private Die die = new Die();

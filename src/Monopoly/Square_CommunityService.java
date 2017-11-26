@@ -1,8 +1,9 @@
+package Monopoly;
 import java.util.Random;
 
-public class Square_Chance extends Square {
-
-	public Square_Chance(String name) {
+public class Square_CommunityService extends Square {
+	
+	public Square_CommunityService(String name) {
 		super(name);
 	}
 	

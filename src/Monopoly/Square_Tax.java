@@ -1,3 +1,4 @@
+package Monopoly;
 public class Square_Tax extends Square {
 	private int price;
 	public Square_Tax(String name, String price) {

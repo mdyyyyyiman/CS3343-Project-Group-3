@@ -1,3 +1,4 @@
+package Monopoly;
 public class Money {
 	int money;
 	
