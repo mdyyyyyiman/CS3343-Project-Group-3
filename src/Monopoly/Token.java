@@ -18,13 +18,5 @@ public enum Token {
 	public int getTokenId() {
 		return tokenId;
 	}
-	public static boolean hasThisToken(String token) {
-		
-		for(Token t: Token.values()) {
-			if (t.name().equals(token)) {
-	            return true;
-	        }
-		}
-		return false;
-	}
+	
 }
