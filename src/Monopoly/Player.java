@@ -11,6 +11,7 @@ public class Player {
 	Money money = new Money(1500);
 	boolean jailPass = false;
 	boolean inJail = false;
+	boolean bot = false;
 	ArrayList<Square_Place> ownedLand = new ArrayList<Square_Place>();
 	
 	public boolean hasJailPass() {
@@ -21,12 +22,21 @@ public class Player {
 		this.jailPass = jailPass;
 	}
 
-	public Player(int id, String name, Token token) {
+	public Player(int id, String name, Token token, Boolean isBot) {
 		this.id = id;
 		this.name = name;
 		this.token = token;
+		this.bot = isBot;
 	}
 	
+	public boolean isBot() {
+		return bot;
+	}
+
+	public void setBot(boolean bot) {
+		this.bot = bot;
+	}
+
 	public int getTotalWalk() {
 		return totalWalk;
 	}
@@ -84,6 +94,10 @@ public class Player {
 	}
 	public boolean isInJail() {
 		return inJail;
+	}
+	public String toString() {
+		return "Player "+ id+": "+ name+ " ("+token+")";
+		
 	}
 	
 }

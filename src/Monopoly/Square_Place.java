@@ -24,8 +24,14 @@ public class Square_Place extends Square {
 	@Override
 	public void doAction(Player player, Board board) {
 		if(owner < 0){
-			System.out.println(player.getName() + ", do you want to it? (Y/N)");
-			String cmd =GameMaster.getYesNoCmd();
+			
+			System.out.println(player.getName() + ", do you want to buy it? (Y/N)");
+			String cmd="";
+			if(!player.isBot()) {
+				cmd =GameMaster.getYesNoCmd();
+			}else
+				cmd = "Y";
+			
 			if(cmd.equals("Y")){
 				System.out.println(player.getName() + " buy " + getName() + " for " + price);
 				owner = player.getID();

@@ -54,13 +54,15 @@ public class Board {
 	
 	public Square movePlayer(Player player, int face, boolean count) {
 		System.out.println("Player walk "+ face +" steps");
-		if(player.isBrokeOut()){ return squares[player.getCurrentPosition()]; }
+		if(player.isBrokeOut()){ 
+			return squares[player.getCurrentPosition()]; 
+		}
 		int newPosition = normalizePosition(player.getCurrentPosition() + face);
 		player.setPosition(newPosition);
 		System.out.println(player.getName() + " goes to [square "+player.getCurrentPosition()+"] " + squares[player.getCurrentPosition()].getDetails());
 		squares[newPosition].doAction(player, this);
 		if(player.getMoney().isBrokeOut()){
-			Util.print(player, player.getName() + " has been broke out!");
+			System.out.println(player.getName() + " has been broke out!");
 			player.setBrokeOut(true);
 		}else{
 			if(count){

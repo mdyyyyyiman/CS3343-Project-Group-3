@@ -1,11 +1,13 @@
 package Monopoly;
 
 public class Monopoly {
+	private String gameMode;
 	private Die die = new Die();
 	private Board board;
 
-	public Monopoly(Player[] players) {
-		board = new Board(players);
+	public Monopoly(Player[] players, String gameMode) {
+		this.board = new Board(players);
+		this.gameMode = gameMode;
 		//board.outputBoard();
 		//board.outputPlayer();
 	}
