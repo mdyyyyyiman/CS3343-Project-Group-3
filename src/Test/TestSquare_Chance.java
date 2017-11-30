@@ -16,7 +16,7 @@ public class TestSquare_Chance {
 	public void testdoAct1() throws Exception {
 		setOutput();
 		Square_Chance square_Chancet = new Square_Chance(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_Chancet.doAction(players[0], board);
 		square_Chancet.setCardDrew(1);
@@ -29,7 +29,7 @@ public class TestSquare_Chance {
 	public void testdoAct2() throws Exception {
 		setOutput();
 		Square_Chance square_Chancet = new Square_Chance(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_Chancet.setCardDrew(2);
 		square_Chancet.doAction(players[0], board);
@@ -42,7 +42,7 @@ public class TestSquare_Chance {
 		public void testdoAct3() throws Exception {
 			setOutput();
 			Square_Chance square_Chancet = new Square_Chance(name);
-			Player[] players = {new Player(1,"John",null)};
+			Player[] players = {new Player(1,"John",null,false)};
 			Board board = new Board(players);
 			square_Chancet.setCardDrew(3);
 			square_Chancet.doAction(players[0], board);

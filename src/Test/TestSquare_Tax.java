@@ -18,7 +18,7 @@ public class TestSquare_Tax {
 		name = "Tax";
 		price ="50";
 		Square_Tax square_Taxt = new Square_Tax(name,price);
-		Player player = new Player(1,"John",null);
+		Player player = new Player(1,"John",null,false);
 		Board board = null;
 		square_Taxt.doAction(player, board);
 		String expected_result = player.getName() +  " need to pay $"+ price + " tax.";

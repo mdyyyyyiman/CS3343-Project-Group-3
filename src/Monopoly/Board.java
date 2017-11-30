@@ -53,8 +53,9 @@ public class Board {
 	}
 	
 	public Square movePlayer(Player player, int face, boolean count) {
-		System.out.println("Player walk "+ face +" steps");
+		System.out.println("Player "+player.getID()+" walks "+ face +" steps");
 		if(player.isBrokeOut()){ 
+			
 			return squares[player.getCurrentPosition()]; 
 		}
 		int newPosition = normalizePosition(player.getCurrentPosition() + face);
@@ -119,7 +120,7 @@ public class Board {
 	}
 	
 	public Player getPlayer(int id) {
-		return players[id];
+		return players[id-1];
 	}
 	
 	public int getTotalSquare() {

@@ -99,5 +99,9 @@ public class Player {
 		return "Player "+ id+": "+ name+ " ("+token+")";
 		
 	}
+	public String getDetails() {
+		return "["+name +"'s Turn " + (totalWalk + 1) + 
+				"] [Square: " + position + "] [$" + money.getMoney() + "]";
+	}
 	
 }

@@ -16,7 +16,7 @@ public class TestSquare_Parking {
 		setOutput();
 		name = "Parking";
 		Square_Parking square_Parkingt = new Square_Parking(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_Parkingt.doAction(players[0], board);
 		String expected_result = "Nothing Happen.";

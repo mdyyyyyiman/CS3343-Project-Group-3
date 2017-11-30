@@ -18,7 +18,7 @@ public class TestSquare_GoToJail {
 		setOutput();
 		name = "GoToJail";
 		Square_GoToJail square_gojailt = new Square_GoToJail(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_gojailt.doAction(players[0], board);
 		String expected_result = players[0].getName() +" has go to Jail."+board.movePlayer(players[0], -1, false);;

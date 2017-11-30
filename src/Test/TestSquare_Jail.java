@@ -13,15 +13,17 @@ public class TestSquare_Jail {
 
 	
 	//test doAction Jailpass=true use=Y
+	
 	@Test
 	public void testdoAct1() throws Exception {
 		setOutput();
 		name = "Jail";
 		Square_Jail square_Jailt = new Square_Jail(name);
-		Player player = new Player(1,"John",null);
+		Player player = new Player(1,"John",null,false);
 		Board board = null;
 		player.setJailPass(true);
-		String cmd = "Y";
+		String input = "Y";
+		
 		square_Jailt.doAction(player, board);
 		String expected_result = "Do you want to use Jail Pass ?"+"\n"+"You have use the jail pass"+"\n";
 		assertEquals(expected_result, getOutput());
@@ -34,7 +36,7 @@ public class TestSquare_Jail {
 		setOutput();
 		name = "Jail";
 		Square_Jail square_Jailt = new Square_Jail(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		//players[0].jailPass=true;
 		String cmd ="N";
@@ -50,7 +52,7 @@ public class TestSquare_Jail {
 		setOutput();
 		name = "Jail";
 		Square_Jail square_Jailt = new Square_Jail(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_Jailt.doAction(players[0], board);
 		String expected_result = "";
@@ -64,7 +66,7 @@ public class TestSquare_Jail {
 		setOutput();
 		name = "Jail";
 		Square_Jail square_Jailt = new Square_Jail(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		//players[0].jailPass=true;
 		String cmd = "Y";

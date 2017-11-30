@@ -17,7 +17,6 @@ public class Square_GoToJail extends Square {
 
 	@Override
 	public String getDetails() {
-
 		return name;
 	}
 }

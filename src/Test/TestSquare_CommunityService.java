@@ -16,7 +16,7 @@ public class TestSquare_CommunityService {
 	public void testdoAct1() throws Exception {
 		setOutput();
 		Square_CommunityService square_cst = new Square_CommunityService(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_cst.setCardDrew(1);
 		square_cst.doAction(players[0], board);
@@ -29,7 +29,7 @@ public class TestSquare_CommunityService {
 	public void testdoAct2() throws Exception {
 		setOutput();
 		Square_CommunityService square_cst = new Square_CommunityService(name);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_cst.setCardDrew(2);
 		square_cst.doAction(players[0], board);
@@ -42,7 +42,7 @@ public class TestSquare_CommunityService {
 		public void testdoAct3() throws Exception {
 			setOutput();
 			Square_CommunityService square_cst = new Square_CommunityService(name);
-			Player[] players = {new Player(1,"John",null)};
+			Player[] players = {new Player(1,"John",null,false)};
 			Board board = new Board(players);
 			square_cst.setCardDrew(3);
 			square_cst.doAction(players[0], board);

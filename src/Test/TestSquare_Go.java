@@ -22,7 +22,7 @@ public class TestSquare_Go {
 		name = "Go";
 		bonus_str = "1000";
 		Square_Go square_got = new Square_Go(name,bonus_str);
-		Player[] players = {new Player(1,"John",null)};
+		Player[] players = {new Player(1,"John",null,false)};
 		Board board = new Board(players);
 		square_got.doAction(players[0], board);
 		String expected_result = players[0].getName() + " is at Go... Giving 1000 money";
@@ -33,11 +33,11 @@ public class TestSquare_Go {
 	@Test
 	//Test for getDetails result: John 50
 	public void testget() {
-		name = "John";
+		name = "Go";
 		bonus_str = "50";
 		square_got = new Square_Go(name,bonus_str);
 		String result_GD = square_got.getDetails();
-		assertEquals("John 50",result_GD);
+		assertEquals("Go 50",result_GD);
 	}
 	
 	
